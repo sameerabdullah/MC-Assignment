@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/teal_200"
+        android:padding="20dp"
+        android:layout_margin="10dp"
+        android:text="Zakat Calculator"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+                <RadioButton
+                    android:id="@+id/RadioButtonGold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:text="Value of Gold (approximately Rs. 747,954)" />
+                <RadioButton
+                    android:id="@+id/RadioButtonSilver"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:text="Value of Silver (approximately Rs. 80,933)" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:padding="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/teal_200"
+                android:gravity="left"
+                android:text="Cash"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/white" />
+            <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="Cash in hand and in bank accounts"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/CashInBank"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="Rs."
+                            android:inputType="number"
+                            />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cash deposited for some future purpose, e.g. Hajj"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/CashForFuture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:hint="Rs."
+                        android:inputType="number"
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cash given out in loans"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/GivenOutLoans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:hint="Rs."
+                        android:inputType="number"
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Investments, shares, saving certificates, pensions funded by money in one’s possession"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/InvestmentNShares"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:hint="Rs."
+                        android:inputType="number"
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+
+                android:padding="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/teal_200"
+                android:gravity="left"
+                android:text="Gold and Silver"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/white" />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Value of Gold that you possess"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ValueOfGold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:hint="Rs."
+                        android:inputType="number"
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Value of Silver that you possess"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ValueOfSilver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:hint="Rs."
+                        android:inputType="number"
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/teal_200"
+                android:gravity="left"
+                android:text="Trade Goods"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/white" />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Value of stock"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ValueOfStock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:hint="Rs."
+                        android:inputType="number"
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+
+                android:padding="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/teal_200"
+                android:gravity="left"
+                android:text="Liabilities"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/white"
+                />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Borrowed money, goods bought on credit"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/BorrowedMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:hint="Rs."
+                        android:inputType="number"
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Wages due to employees"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/WagesEmployees"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:hint="Rs."
+                        android:inputType="number"
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Taxes, Rent, utility bills due immediately"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/TaxesNBills"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:hint="Rs."
+                        android:inputType="number"
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/CalculateZakat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:onClick="CalculateZakat"
+                        android:text="Calculate Zakat" />
+
+                    <Button
+                        android:id="@+id/ResetValues"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:onClick="ResetOnClick"
+                        android:text="Reset" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>
